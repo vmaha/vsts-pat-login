@@ -3,6 +3,8 @@ import { RouteComponentProps } from "react-router";
 
 import { Auth } from "../models/Auth";
 
+import { Config } from "../components/Config";
+
 import "./Home.scss";
 
 
@@ -33,6 +35,9 @@ export class Home extends React.Component<Props, State> {
     public render() {        
         return (
             <main className="view-home">
+                <div className="config-container">
+                    <Config/>
+                </div>
             </main>
         );
     }

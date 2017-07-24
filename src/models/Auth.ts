@@ -13,13 +13,6 @@ export class Auth {
         return localStorage.getItem(this.localStorageKeys.personalAccessToken);
     }
 
-    private get redirectUrl(): string {
-        let value = localStorage.getItem(this.localStorageKeys.redirectUrl);
-        if (value == null) {
-            return "/";
-        }
-    }
-
     public needsCredentials(): boolean {        
         return (
             this.accountName != null && 
@@ -28,7 +21,7 @@ export class Auth {
     }
 
     public loginIfNeeded() {
-        if (!this.needsCredentials()) {
+        if (this.needsCredentials()) {
             window.location.href = `/login?redirectUrl=${window.location.href}`;
         }
     }

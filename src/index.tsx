@@ -1,6 +1,7 @@
 import * as React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
+import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
 
 import { Auth } from "./models/Auth";
 import { Home } from "./views/Home";
@@ -13,11 +14,11 @@ import "./index.scss";
 render(
     (
         <BrowserRouter>
-          <div>
+          <Fabric>
             <ScrollToTop />
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
-          </div>
+          </Fabric>
         </BrowserRouter>
     ),
     document.getElementById("content")

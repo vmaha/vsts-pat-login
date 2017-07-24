@@ -23,9 +23,9 @@ export class Login extends React.Component<Props, State> {
     public render() {
         return (
             <main>
-                <form action={this.props.redirectUrl}>
-                    <TextField label="Account" placeholder="eg. contoso.visualstudio.com"/>
-                    <TextField label="Personal access token" type="password"/>
+                <form action={this.props.redirectUrl}>                    
+                    <TextField label="Account"/>
+                    <TextField label="Personal access token" />
                     <button type="submit">Login</button>
                 </form>
             </main>
