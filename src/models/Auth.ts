@@ -9,14 +9,22 @@ export class Auth {
         return localStorage.getItem(this.localStorageKeys.accountName);
     }
 
+    public set accountName(newValue: string) {
+        localStorage.setItem(this.localStorageKeys.accountName, newValue);
+    }
+
     public get personalAccessToken(): string {
         return localStorage.getItem(this.localStorageKeys.personalAccessToken);
     }
 
+    public set personalAccessToken(newValue: string) {
+        localStorage.setItem(this.localStorageKeys.personalAccessToken, newValue);
+    }
+
     public needsCredentials(): boolean {        
         return (
-            this.accountName != null && 
-            this.personalAccessToken != null
+            this.accountName == null || 
+            this.personalAccessToken == null
         );
     }
 

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { TextField } from "office-ui-fabric-react/lib/TextField";
-import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
+
+import { QueryDropdown } from "./QueryDropdown";
 
 export interface Props {
 }
@@ -14,7 +15,7 @@ export class Config extends React.Component<Props, State> {
         return (
             <div className="config">
                 <TextField label="Title" defaultValue="Query Tile"/>
-                <Dropdown label="Query" placeHolder="Select query"/>
+                <QueryDropdown />
             </div>
         );
     }

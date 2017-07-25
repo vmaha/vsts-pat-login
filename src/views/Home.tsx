@@ -17,7 +17,9 @@ export class State {
 
 export class Home extends React.Component<Props, State> {
 
-    public render() {        
+    public render() {
+        let auth = new Auth();
+        auth.loginIfNeeded();
         return (
             <main className="view-home">
                 <div className="config-container">

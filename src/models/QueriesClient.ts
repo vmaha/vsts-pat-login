@@ -23,6 +23,5 @@ export class QueriesClient {
         
         xhr.onload = onload;
         xhr.send();
-
     }
 }
