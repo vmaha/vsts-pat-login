@@ -3,7 +3,6 @@ import { render } from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
 
-import { Auth } from "./models/Auth";
 import { Home } from "./views/Home";
 import { Login } from "./views/Login";
 

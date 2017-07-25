@@ -1,3 +1,9 @@
+import { store } from "../redux/store";
+import { 
+    updateAccountName, 
+    updatePersonalAccessToken,
+} from "../redux/Actions";
+
 export class Auth {
 
     private readonly localStorageKeys = {
@@ -31,6 +37,10 @@ export class Auth {
     public loginIfNeeded() {
         if (this.needsCredentials()) {
             window.location.href = `/login?redirectUrl=${window.location.href}`;
+        }
+        else {
+            store.dispatch(updateAccountName(this.accountName));
+            store.dispatch(updatePersonalAccessToken(this.personalAccessToken));
         }
     }
 }

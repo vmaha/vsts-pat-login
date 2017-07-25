@@ -41,12 +41,12 @@ export class Login extends React.Component<Props, State> {
                         label="Account" 
                         value={this.state.accountName} 
                         onChanged={newValue => this.setState({accountName: newValue})}
-                    />;
+                    />
                     <TextField 
                         label="Personal access token" 
                         value={this.state.personalAccessToken}
                         onChanged={newValue => this.setState({personalAccessToken: newValue})}
-                    />;
+                    />
                     <button type="submit">Login</button>
                 </form>
             </main>
