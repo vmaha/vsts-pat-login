@@ -1,5 +1,5 @@
 import { Auth } from "./Auth";
-import { store } from "../redux/store";
+import { store } from "../redux/Store";
 
 export class QueriesClient {
     private auth = new Auth();

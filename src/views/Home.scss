@@ -2,12 +2,19 @@
     height: 100vh;
     $page-margin:20px;
     .config-container {
-        position: fixed;
-        right:$page-margin;
+        position: absolute;        
         top:$page-margin;
-        height: calc(100% - 4*#{$page-margin});
+        height: calc(100% - 2*#{$page-margin});
         width: 434px;
-        padding: 15px;
         outline: 1px dashed #777777;
+        &>:first-child {
+            margin: 15px;
+        }
+        &.right {
+            right:$page-margin;
+        }
+        &.left {
+            left:$page-margin;
+        }
     }
 }
