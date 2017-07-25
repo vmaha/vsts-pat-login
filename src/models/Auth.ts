@@ -5,7 +5,7 @@ export class Auth {
         personalAccessToken: "login_personal_access_token",
     };
 
-    private get accountName(): string {
+    public get accountName(): string {
         return localStorage.getItem(this.localStorageKeys.accountName);
     }
 

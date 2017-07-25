@@ -1,9 +1,11 @@
 .view-home {
+    height: 100vh;
+    $page-margin:20px;
     .config-container {
         position: fixed;
-        right:0;
-        top:0;
-        height: 100%;
+        right:$page-margin;
+        top:$page-margin;
+        height: calc(100% - 4*#{$page-margin});
         width: 434px;
         padding: 15px;
         outline: 1px dashed #777777;
