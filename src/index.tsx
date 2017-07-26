@@ -10,8 +10,6 @@ import { store } from "./redux/Store";
 
 import { ScrollToTop } from "./components/ScrollToTop";
 
-import "./index.scss";
-
 render(
     (
         <BrowserRouter>
