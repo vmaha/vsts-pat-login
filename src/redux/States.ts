@@ -1,15 +1,22 @@
 import { Project } from "../models/Project";
+import { Repo } from "../models/Repo";
 
-export interface ProjectState {
+export interface ListState<T> {
     isFetching: boolean,
-    selectedProjectId: string,    
-    projects: {
-        [projectId: string]: Project
-    },
+    selectedId: string,    
+    items: {
+        [id: string]: T
+    },    
+}
+
+export interface RepoState {
+    parentProjectId: string;
+    childRepos: ListState<Repo>;
 }
 
 export interface State {
     personalAccessToken: string,
     accountName: string,    
-    projects: ProjectState,
+    projects: ListState<Project>,
+    repos: RepoState,
 }

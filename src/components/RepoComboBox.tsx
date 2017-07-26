@@ -2,14 +2,14 @@ import * as React from "react";
 import { ComboBox } from "office-ui-fabric-react/lib/ComboBox";
 import { ISelectableOption } from "office-ui-fabric-react/lib/utilities/selectableOption";
 
-import { Project } from "../models/Project";
+import { Repo } from "../models/Repo";
 
 export interface Props {
-    items: Project[];
-    onItemSelected?: (projectId: string) => void;
+    items: Repo[];
+    onItemSelected?: (repoId: string) => void;
 }
 
-export const ProjectComboBox = (props: Props) => {
+export const RepoComboBox = (props: Props) => {
     let getOptions = () => {        
         return (
             props.items
@@ -20,7 +20,7 @@ export const ProjectComboBox = (props: Props) => {
 
     return (
         <ComboBox
-            label="Project"
+            label="Repository"
             options={getOptions()}
             onResolveOptions={() => getOptions()}
             onChanged={(option) => props.onItemSelected(option.key as string)}

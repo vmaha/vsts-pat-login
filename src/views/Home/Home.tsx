@@ -1,9 +1,10 @@
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
 
-import { Config } from "../../components/Config";
+import { Config } from "./Presentation/Config";
 import { Auth } from "../../models/Auth";
-import { fetchProjects } from "../../redux/Actions";
+import { fetchProjects } from "../../redux/Actions/Projects";
+import { fetchRepos } from "../../redux/Actions/Repos";
 import { store } from "../../redux/Store";
 
 import { HomeProjectComboBox } from "./Containers/HomeProjectComboBox";
@@ -19,6 +20,19 @@ export class Home extends React.Component<Props, State> {
 
     public componentDidMount() {
         store.dispatch(fetchProjects());
+
+        store.subscribe(() => {
+            let isAlreadyFetching = store.getState().repos.childRepos.isFetching;
+            if (isAlreadyFetching) {
+                return;
+            }
+            
+            let projectOfRepos = store.getState().repos.parentProjectId;
+            let currentProject = store.getState().projects.selectedId;
+            if (projectOfRepos != currentProject) {
+                store.dispatch(fetchRepos());
+            }
+        });
     }
 
     public render() {

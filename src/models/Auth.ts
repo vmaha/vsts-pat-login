@@ -1,8 +1,6 @@
 import { store } from "../redux/Store";
-import { 
-    updateAccountName, 
-    updatePersonalAccessToken,
-} from "../redux/Actions";
+import { updateAccountName } from "../redux/Actions/AccountName";
+import { updatePersonalAccessToken } from "../redux/Actions/PersonalAccessToken";
 
 export class Auth {
 

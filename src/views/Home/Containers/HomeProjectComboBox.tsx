@@ -1,27 +1,19 @@
 import { connect, Dispatch } from "react-redux";
 
 import { ProjectComboBox } from "../../../components/ProjectComboBox";
-import { Project } from "../../../models/Project";
-import { updateSelectedProject } from "../../../redux/Actions";
+import { updateSelectedProject } from "../../../redux/Actions/Projects";
 import { State } from "../../../redux/States";
-
-function indexProjectsToArray(projects: { [projectId: string]: Project }): Project[] {
-    let array: Project[] = [];
-    for (let projectId in projects) {
-        array.push(projects[projectId]);
-    }
-    return array;
-}
+import * as Reselectors from "../../../redux/Reselectors";
 
 const mapStateToProps = (state: State) => {
     return {
-        projects: indexProjectsToArray(state.projects.projects),
+        items: Reselectors.indexToArray(state.projects.items),
     }
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<State>) => {
     return {
-        onProjectSelected: (projectId: string) => {
+        onItemSelected: (projectId: string) => {
           dispatch(updateSelectedProject(projectId));
         }
     };
