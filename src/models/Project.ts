@@ -1,4 +1,3 @@
-export interface Project {
-    name: string;
-    id: string;
-}
+import { ListItem } from "./ListItem";
+
+export interface Project extends ListItem {}

@@ -1,4 +1,3 @@
-export interface Repo {
-    name: string;
-    id: string;
-}
+import { ListItem } from "./ListItem";
+
+export interface Repo extends ListItem {}
