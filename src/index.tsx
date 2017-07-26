@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
 import { Provider } from "react-redux";
 
-import { Home } from "./views/Home";
+import { Home } from "./views/Home/Home";
 import { Login } from "./views/Login";
 import { store } from "./redux/Store";
 

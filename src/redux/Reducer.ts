@@ -57,16 +57,6 @@ export const projects: Reducer<ProjectState> = (state = projectsInitialValue, ac
     }
 }
 
-export const selectedProject: Reducer<string> = (state = "", action: Actions.UpdatePersonalAccessTokenAction) => {
-    switch(action.type) {
-        case Actions.UPDATE_PERSONAL_ACCESS_TOKEN:
-            return action.personalAccessToken;
-        default:
-            return state;
-    }
-}
-
-
 export const reducer = combineReducers<State>({
     accountName,
     personalAccessToken,
