@@ -8,6 +8,7 @@ import * as Reselectors from "../../../redux/Reselectors";
 const mapStateToProps = (state: State) => {
     return {
         items: Reselectors.indexToArray(state.repos.childRepos.items),
+        isFetching: state.repos.childRepos.isFetching,
     }
 };
 

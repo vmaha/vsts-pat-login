@@ -2,7 +2,7 @@ import { Project } from "../models/Project";
 import { Repo } from "../models/Repo";
 
 export interface ListState<T> {
-    isFetching: boolean,
+    isFetching: boolean,    
     selectedId: string,    
     items: {
         [id: string]: T

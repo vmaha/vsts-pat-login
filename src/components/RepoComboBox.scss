@@ -1,0 +1,18 @@
+.repo-combobox {
+    position: relative;
+    .ms-Spinner {
+        position: absolute;
+        right:8px;
+        bottom:8px;
+    }
+    &:not(.loading) {
+        .ms-Spinner {
+            display: none;
+        }
+    }
+    &.loading {
+        .ms-ComboBox-Button {
+            display: none;
+        }
+    }
+}
