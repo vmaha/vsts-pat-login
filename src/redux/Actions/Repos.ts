@@ -33,14 +33,9 @@ export const receiveRepos: ActionCreator<ReceiveReposAction> = (repos: Repo[], p
 
 export const UPDATE_SELECTED_REPO = "UPDATE_SELECTED_REPO";
 
-export interface UpdateSelectedRepoAction extends Action {
-    repoId: string;
-}
+export interface UpdateSelectedRepoAction extends ListActions.UpdateSelectedAction {}
 
-export const updateSelectedRepo: ActionCreator<UpdateSelectedRepoAction> = (repoId: string) => ({  
-    type: UPDATE_SELECTED_REPO,
-    repoId: repoId,
-});
+export const updateSelectedRepo = ListActions.getUpdateSelectedActionCreator(UPDATE_SELECTED_REPO);
 
 /**
  * fetchRepos

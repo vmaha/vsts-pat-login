@@ -19,7 +19,9 @@ export function getReceiveActionCreator<T extends ListItem>(actionType: string) 
     });
 }
 
-export function getUpdateSelectedActionCreator(actionType: string) {
+export type UpdateSelectedActionCreator = (id: string) => UpdateSelectedAction;
+
+export function getUpdateSelectedActionCreator(actionType: string): UpdateSelectedActionCreator {
     return (id: string) => ({
         type: actionType,
         id: id
